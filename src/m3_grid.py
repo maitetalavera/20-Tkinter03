@@ -38,27 +38,14 @@ import tkinter as tk
 
 window=tk.Tk()
 
-for i in range(3):
-    window.columnconfigure(i, weight=1, minsize=75)
-    window.rowconfigure(i, weight=1, minsize=50)
+window.rowconfigure(0,weight=1, minsize=50)
+window.columnconfigure([0, 1], weight=1, minsize=50)
 
-    for j in range(3):
-        frame1=tk.Frame(
-            master=window,
-            relief=tk.RAISED,
-            borderwidth=1
-        )
-        frame1.grid(row=i, column=j, padx=5, pady=5)
-        label=tk.Label(master=frame1, text="Frame A")
-        label.pack()
-        frame2=tk.Frame(
-            master=window,
-            relief=tk.RAISED,
-            borderwidth=1
-        )
-        frame2.grid(row=i, column=j, padx=5, pady=5)
-        label=tk.Label(master=frame2, text="Frame B")
-        label.pack()
+frame1=tk.Frame(master=window, bg="red")
+frame1.grid(row=0, column=0)
+
+frame2=tk.Frame(master=window, bg="yellow")
+frame2.grid(row=0, column=1)
 
 
 window.mainloop()
