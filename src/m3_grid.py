@@ -15,7 +15,7 @@ import tkinter as tk
 #   Once you have done this, then change the above _TODO_ to DONE.
 #
 #
-# TODO: 2. (5 pts)
+# DONE: 2. (5 pts)
 #
 #   Now, create two frames in your window.
 #
@@ -36,20 +36,26 @@ import tkinter as tk
 #
 ###############################################################################
 
-window=tk.Tk()
 
-window.rowconfigure(0,weight=1, minsize=50)
-window.columnconfigure([0, 1], weight=1, minsize=50)
+window = tk.Tk()
 
-frame1=tk.Frame(master=window, bg="red")
-frame1.grid(row=0, column=0)
+f1 = tk.Frame(window, bg="red", padx=5, pady=5)
+f2 = tk.Frame(window, bg="yellow", padx=5, pady=5)
 
-frame2=tk.Frame(master=window, bg="yellow")
-frame2.grid(row=0, column=1)
+f1.grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
+f2.grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
 
+window.rowconfigure(0, weight=1)
+window.columnconfigure(0, weight=1)
+window.columnconfigure(1, weight=1)
+
+l1 = tk.Label(f1, text="Frame A", bg="red")
+l2 = tk.Label(f2, text="Frame B", bg="yellow")
+
+l1.pack()
+l2.pack()
 
 window.mainloop()
-
 
 #window=tk.Tk()
 
